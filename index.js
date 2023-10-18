@@ -16,6 +16,9 @@ const connection = mysql.createPool({
   //   database: "syntra",
 });
 
+server.get("/", function (req, res) {
+  res.send("Welcome to your amazing api...");
+});
 server.get("/friends", function (req, res) {
   connection.query("SELECT * FROM `friends`;", function (error, results) {
     if (!error) {
